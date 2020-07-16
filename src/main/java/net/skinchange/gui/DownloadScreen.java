@@ -103,7 +103,7 @@ public class DownloadScreen extends Screen
             //act 5 downloads image
             URL url = new URL(b);
             BufferedImage img = ImageIO.read(url);
-            File file = new File("skins\\" + usernameCAPS + ".png");
+            File file = new File("skins/" + usernameCAPS + ".png");
             ImageIO.write(img, "png", file);
             return true;
         }
