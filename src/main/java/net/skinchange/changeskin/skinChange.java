@@ -58,7 +58,7 @@ public abstract class skinChange
                 String UsersName = json.get("selectedProfile").getAsJsonObject().get("name").getAsString();
 
                 //writes to file
-                PrintWriter writer = new PrintWriter("config\\skinchange\\data.txt", "UTF-8");
+                PrintWriter writer = new PrintWriter("config/skinchange/data.txt", "UTF-8");
                 writer.println(UsersName);
                 writer.println(authtoken);
                 writer.close();
@@ -87,7 +87,7 @@ public abstract class skinChange
                     scr.error = I18n.translate("skin.no_internet");
                     return false;
                 }
-                Scanner scan = new Scanner(new File("config\\skinchange\\data.txt"));
+                Scanner scan = new Scanner(new File("config/skinchange/data.txt"));
                 String username = scan.nextLine();
                 String auth = scan.nextLine();
                 scan.close();
@@ -173,7 +173,7 @@ public abstract class skinChange
             //act 5 downloads image
             URL url = new URL(b);
             BufferedImage img = ImageIO.read(url);
-            File file = new File("config\\skinchange\\" + "temp" + ".png");
+            File file = new File("config/skinchange/" + "temp" + ".png");
             ImageIO.write(img, "png", file);
 
             if(FileUtils.contentEquals(file, skin)){
